@@ -20,7 +20,7 @@ const Footer = () => {
                   <a href="https://www.instagram.com"><img src={instagramIcon} width={38} height={30} alt="Visitez notre page instagram" /></a>
                   <a href="https://www.twitter.com"><img src={twitterIcon} width={38} height={30} alt="Visitez notre page twitter" /></a>
               </div>
-              <a target='_blank' href='www.marcoformante.com/politiquedeconfidentialitè.pdf'>Politique de confidentialité</a>
+              <a target='_blank' rel="noreferrer" href='https://www.marcoformante.com/politiquedeconfidentialitè.pdf'>Politique de confidentialité</a>
           </div>
       
     </footer>
