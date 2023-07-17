@@ -40,8 +40,6 @@ In your browser search for localhost/phpmyadmin , go to SQL and write : CREATE D
 
 then go to "import" and import the file "garage.sql" inside the app folder;
 
-
-
 and last command line in terminal (normally) : npm start
 
 

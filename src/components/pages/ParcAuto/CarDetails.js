@@ -53,7 +53,7 @@ export default CarDetails
 
 
 // Photos of single car ,car Photos carousel component
-const CarPhotos = ({thumbnail,year,km,price,offer,setCarPhotosInLoading}) => {
+const CarPhotos = ({make,model,thumbnail,year,km,price,offer,setCarPhotosInLoading}) => {
     const [imgs, setImgs] = useState([])
     const [imgLarge, setImgLarge] = useState("")
     const [arrowTarget, setArrowTarget] = useState()
@@ -167,7 +167,7 @@ const CarPhotos = ({thumbnail,year,km,price,offer,setCarPhotosInLoading}) => {
                         </p>
                     </div>
     
-                <img src={imgLarge} alt="" /> 
+                <img src={imgLarge} alt={`Garage Vincent Parrot - ${make} ${model} `} /> 
                 
                 </div> 
             </div>
@@ -252,18 +252,20 @@ const Details = ({id,year,km,setDetailsInLoading}) => {
                 }
                  break;
              
-                  case "second":
-                    if (activeDetail === true) {
-                        setActiveDetail(false) 
-                     } else {
-                         setActiveDetail(true)
-                    }
-                     break;
+            case "second":
+              if (activeDetail === true) {
+                  setActiveDetail(false) 
+               } else {
+                   setActiveDetail(true)
+              }
+               break;
          
             default:
                 break;
          }
     }
+
+
     return (
         <div>
             <div className={'container--center--row container--center--row--flex-end'}>

@@ -14,7 +14,7 @@ const CarCard = ({ id, make, model, thumbnail, km, year, offer, price,currentPag
  
   return (
       <figure className='car_card'>
-      <img src={"/images/uploads/" + thumbnail} alt={model} />
+      <img src={"/images/uploads/" + thumbnail} alt={"Garage Vincent Parrot ," + make + " " + model} />
 
       <figcaption className={"car_card_model"}>{make} {model}</figcaption>
                 <div className={'car_card_details'}>
