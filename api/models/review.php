@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . "/app/api/models/connection.php";
+require_once "connection.php";
 
 Class Review{
     use Connection;

@@ -2,7 +2,7 @@
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
 require_once("connection.php");
-require_once $_SERVER['DOCUMENT_ROOT'] .'/app/vendor/autoload.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . "/" . getenv("path") . '/vendor/autoload.php';
 
 use \Firebase\JWT\JWT;
 use Firebase\JWT\Key;

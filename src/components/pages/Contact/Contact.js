@@ -24,7 +24,8 @@ const Contact = () => {
   function submitForm(e) {
     e.preventDefault()
     if (formInputs.surname && formInputs.name && formInputs.email && formInputs.tel && formInputs.message) {
-      emailjs.sendForm("service_23l3ul5", "template_vsffnz7", e.target, "dQufTu-6qCghfGD3w")
+
+      emailjs.sendForm(process.env.REACT_APP_EMJService, process.env.REACT_APP_EMJTemplate, e.target, process.env.REACT_APP_EMJCode)
       notifySuccess("Message envoyé avec succès")
      setFormInputs({ subject: "", surname: "", name: "", email: "", tel: "", message: "" })
     } else {
