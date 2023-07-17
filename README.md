@@ -4,7 +4,7 @@ Garage Vincent Parrot ECF 2023.
 Hello everyone, for this project i used xaamp, react, and php
 so..
  
-install xampp 
+install xampp (or wamp if you don't use xampp )
 
 go inside C:/ xampp / htdocs
 
