@@ -19,6 +19,7 @@ import ReviewsHandler from './components/pages/admin/reviewsHandler/ReviewsHandl
 import TimesOpeningHandler from './components/pages/admin/TimesOpeningHandler/TimesOpeningHandler';
 import ServicesHandler from './components/pages/admin/ServicesHandler/ServicesHandler';
 import CarsHandler from './components/pages/admin/CarsHandler/CarsHandler';
+import NotFoundPage from './components/pages/NotFound/NotFoundPage';
 
 function App() {
 
@@ -51,7 +52,7 @@ function App() {
           <Route path="/contact" element={<Contact/>} />
           <Route path="/area-reserve" element={<ReservedArea setLogin={(value) => setlogin(value)} />} />
           <Route path="/avis" element={<AvisPage/>} />
-          <Route path='*' element={"NOT FOUND 404"} />
+          <Route path='*' element={<NotFoundPage />} />
       
           {/*Protected*/}
           
@@ -64,7 +65,7 @@ function App() {
             <Route path={"/admin/accounts"} element={<Accounts/>} />
             <Route path={"/admin/reviews"} element={<ReviewsHandler/>} />
             <Route path={"/admin/timeTable"} element={<TimesOpeningHandler/>} />
-            <Route path={"/admin/*"} element={<h1>notfound</h1>} />
+            <Route path={"/admin/*"} element={<NotFoundPage/>} />
           </Route>
           
         </Routes>
