@@ -50,7 +50,7 @@ function App() {
           <Route path='/parc-auto' element={<ParcAuto />} />
           <Route path='/parc-auto/details/:id' element={<CarDetails />} />
           <Route path="/contact" element={<Contact/>} />
-          <Route path="/area-reserve" element={<ReservedArea setLogin={(value) => setlogin(value)} />} />
+          <Route path="/espace-reserve" element={<ReservedArea setLogin={(value) => setlogin(value)} />} />
           <Route path="/avis" element={<AvisPage/>} />
           <Route path='*' element={<NotFoundPage />} />
       

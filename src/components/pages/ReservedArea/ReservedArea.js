@@ -38,14 +38,13 @@ const ReservedArea = ({ setLogin }) => {
   
   return (
     <div>
-      <PageTitle pageTitle={"Area Reservé au personnel"} />
+      <PageTitle pageTitle={"Espace reservé au personnel"} />
       <form className='form' onSubmit={handleSubmit}>
         <FormElement label={{ for: "email", text: "Email" }}
-          input={{ type: "email", name: "email", id: "email", required: true, value: email, onChange: (e) => setEmail(e.target.value), style: { width: "80vw" } }}
-        />
+          input={{ type: "email", name: "email", id: "email", required: true, value: email, onChange: (e) => setEmail(e.target.value), style: { width: "80vw" } }} required={true}/>
         <FormElement
           label={{ for: "password", text: "Password" }}
-          input={{ type: "password", name: "password", id: "password", required: true, value: password, onChange: (e) => setPassword(e.target.value), style: { width: "80vw" } }} />
+          input={{ type: "password", name: "password", id: "password", value: password, onChange: (e) => setPassword(e.target.value), style: { width: "80vw" } }} required={true}/>
         <FormElement input={{type:"submit",value:"Acceder"}}/>
       </form>
       {errorMessage && <span className='error-message text-center pad-top-20'>{errorMessage}</span>}

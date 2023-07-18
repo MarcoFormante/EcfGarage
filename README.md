@@ -38,18 +38,18 @@ Setenv path "app"
 
 In your browser search for localhost/phpmyadmin , go to SQL and write : CREATE DATABASE garage ,and execute it
 
-then go to "import" and import the file "garage.sql" inside the app folder;
+then click to "import" and import the file "garage.sql" (it's inside the "app" folder);
 
 and last command line in terminal (normally) : npm start
 
 
-Try to logIn with this credentials in "Area Reservè" :
+Try to logIn with this credentials in "Espace Reservé" :
 
 testadmin@gmail.com	
 Testadmin23
 
 try to create new cars or modify them.
-there are not images in upload folder related with path images in car_images table
+there are not images in images/uploads folder related with path images in car_images table
 
 need some help? 
 

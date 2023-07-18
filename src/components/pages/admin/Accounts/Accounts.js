@@ -104,7 +104,7 @@ const Accounts = () => {
     <div>
       <div>
         <Toaster/>
-      <PageTitle pageTitle={"Créer un nouvel account"}/>
+      <PageTitle pageTitle={"Créer un nouveau compte"}/>
       <form className='form' onSubmit={handleSubmit}>
         <FormElement
           label={{ for: "email", text: "Email" }}
@@ -117,7 +117,7 @@ const Accounts = () => {
           input={{ type: "password", name: "password", id: "password", style : {width:"80vw"}, onChange: (e) => handlePassword(e),maxLength:60}}   value={password} required={true}
         />
         <span className='error-message text-center'>{passwordError}</span>
-        <input type="submit" className='cta cta--red mar-top-20' value={"Crèer"} />
+        <input type="submit" className='cta cta--red mar-top-20' value={"Créer"} />
        
       </form>
       <br />

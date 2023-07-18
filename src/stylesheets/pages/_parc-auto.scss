@@ -95,6 +95,7 @@ input[type="checkbox"]{
             right: 2px;
             top: 5px;
         }
+        
         @media screen and (min-width:map-get($breakpoints,"large")) {
             margin-right: 150px;
         }
@@ -118,10 +119,16 @@ input[type="checkbox"]{
     width: 40px;
     height: 40px;
     background-image: url(/src/icons//filters_icon_red.svg);
-    position: fixed;
-    z-index: 15;
+  
+    
+
     @media screen and (max-width:350px) {
         top: 0;
+    }
+
+    @media screen and (max-width:map-get($breakpoints,"medium")) {
+        position: fixed;
+        z-index: 15;
     }
     
 }

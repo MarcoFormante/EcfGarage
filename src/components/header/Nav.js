@@ -16,7 +16,7 @@ const Nav = ({menuToggle,handleMenu,setMenuToggle}) => {
 
    //public Routes (all users)
     const publicLinks = [{
-            page: "Acceuil",
+            page: "Accueil",
             path: "/"
         },
         {
@@ -84,11 +84,11 @@ useEffect(() => {
                       ?
                         <NavLink 
                             className={`nav_link`}
-                            to={"/area-reserve"}
+                            to={"/espace-reserve"}
                             end
                             onClick={handleMenu}    
                             >
-                            {"Area Reservé"}
+                            {"Espace reservé"}
                         </NavLink>
                       
                       :

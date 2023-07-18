@@ -39,8 +39,6 @@ Class Car {
             $exeCount = $stmt->execute([$filters["minKm"],$filters["maxKm"],$filters['minYear'],$filters['maxYear'],$filters['minPrice'],$filters['maxPrice']]);
             $exeCars = $stmt2->execute();
 
-           
-
             if($exeCount){
                 $count = $stmt->fetch(PDO::FETCH_ASSOC);
             }else{
@@ -134,9 +132,7 @@ Class Car {
                 echo json_encode($filters);
             }
         }
-    }
-
-    
+    } 
 }
 ?>
 

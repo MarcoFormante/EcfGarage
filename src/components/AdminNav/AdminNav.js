@@ -16,7 +16,7 @@ const AdminNav = ({checkToken}) => {
         },
         {
             to: "admin/carsHandler",
-            linkName : "Gestion vehicules"
+            linkName : "Gestion véhicules"
         },
         {
             to: "admin/services",

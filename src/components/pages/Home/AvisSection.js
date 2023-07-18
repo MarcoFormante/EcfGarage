@@ -128,7 +128,7 @@ const AvisSection = () => {
                     :
                     ""
             }
-                <p className='title_cta'>Votre avis nous interesse</p>
+                <p className='title_cta'>Votre avis nous intéresse</p>
                 <ButtonCta type={"link"} to={"/avis"} inner={"Je donne mon avis"} className={"cta cta--red cta--wh-70vw cta_avis"} />
             </div>
         )

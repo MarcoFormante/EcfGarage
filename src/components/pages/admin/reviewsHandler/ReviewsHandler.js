@@ -94,7 +94,10 @@ const ReviewsHandler = () => {
                 <div className='input_center_handler'>
                     <div className='container--center--column inputs_container_filters_inner '>
                         <label htmlFor="gestionReviewFilters">Filtrer par</label>
-                        <select type="text" id='gestionReviewFilters' value={filters} onChange={(e)=> setFilters(e.target.value)}>
+                        <select type="text" id='gestionReviewFilters' value={filters} onChange={(e) => {
+                            setFilters(e.target.value)
+                            setCurrentPage(0)
+                        }}>
                             <option value="0">A' valider</option>
                             <option value="1">Tout</option>
                         </select>

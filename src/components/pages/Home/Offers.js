@@ -110,7 +110,7 @@ const Offers = ({cars,count}) => {
               
             </div>
             <div className={"container_full--flex"}>
-                <ButtonCta className={"cta cta--red cta_offers cta--wh-70vw container--center--row"} inner={"Tous nos vèhicules"} type={"link"} to={"/parc-auto"} />
+                <ButtonCta className={"cta cta--red cta_offers cta--wh-70vw container--center--row"} inner={"Tous nos véhicules"} type={"link"} to={"/parc-auto"} />
             </div>
         </div>
         </div>

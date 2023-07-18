@@ -59,12 +59,12 @@ const DetailsInputs = ({ formValues ,setFormValues,formIsValid }) => {
         <FormElement label={{ for: "color", text: "Couleur" }} input={{ type: "text",name:"color",id:"color",onChange:(e)=>setDetailValues({...detailValues,[e.target.name]:e.target.value})}} value={detailValues.color} required={true} />
         <FormElement label={{ for: "dni", text: "Puissance DIN" }} input={{ type: "number",name:"dni",id:"dni", onChange:(e)=>setDetailValues({...detailValues,[e.target.name]:e.target.value})}} value={detailValues.dni} required={true} />
         <FormElement label={{ for: "fiscalPower", text: "Puissance fiscale" }} input={{ type: "number",name:"fiscalPower",id:"fiscalPower",onChange:(e)=>setDetailValues({...detailValues,[e.target.name]:e.target.value})}} value={detailValues.fiscalPower} required={true} />
-        <FormElement label={{ for: "gearbox", text: "Boite de vitesse" }} select={{ name: "gearbox", id: "gearbox",onChange:(e)=>setDetailValues({...detailValues,[e.target.name]:e.target.value}) }} required={true}>
+        <FormElement label={{ for: "gearbox", text: "Boîte de vitesse" }} select={{ name: "gearbox", id: "gearbox",onChange:(e)=>setDetailValues({...detailValues,[e.target.name]:e.target.value}) }} required={true}>
           <option value=""></option>
           <option value="Manuelle">Manuelle</option>
           <option value="Automatique">Automatique</option>
         </FormElement>
-        <FormElement label={{ for: "fuel", text: "Energie" }} select={{name: "fuel", id: "fuel",onChange:(e)=>setDetailValues({...detailValues,[e.target.name]:e.target.value})}} value={detailValues.fuel}  required={true}>
+        <FormElement label={{ for: "fuel", text: "Carburant" }} select={{name: "fuel", id: "fuel",onChange:(e)=>setDetailValues({...detailValues,[e.target.name]:e.target.value})}} value={detailValues.fuel}  required={true}>
           <option value=""></option>
           <option value="Essence">Essence</option>
           <option value="Gazole">Gazole</option>

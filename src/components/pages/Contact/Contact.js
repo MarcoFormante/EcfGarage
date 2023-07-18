@@ -44,7 +44,7 @@ const Contact = () => {
 
               <FormElement label={{ for: "carID", text: "" }} input={{ className:"width-formInpt_noFlex", hidden:true, type: "text", name: "carID", id: "carID",onChange:()=>{} }} value={location?.state?.id &&  `VoitureID: ${location?.state?.id}`} />
 
-              <FormElement label={{ for: "subject", text: "Subject" }} input={{ className:"width-formInpt_noFlex", type: "text", name: "subject", id: "subject", onChange: (e) => handleChange(e.target.name, e.target.value) }} value={formInputs.subject.slice(0,100)} maxLength={100} />
+              <FormElement label={{ for: "subject", text: "Object" }} input={{ className:"width-formInpt_noFlex", type: "text", name: "subject", id: "subject", onChange: (e) => handleChange(e.target.name, e.target.value) }} value={formInputs.subject.slice(0,100)} maxLength={100} />
               
               <FormElement label={{ for: "surname", text: "Nom" }} input={{className:"width-formInpt_noFlex", type: "text", name: "surname", id: "surname",required:true,value:formInputs.surname, onChange:(e)=> handleChange(e.target.name,e.target.value.slice(0,50)) }}  maxLength={50}  value={formInputs.surname} required={true} />
               

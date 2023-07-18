@@ -204,7 +204,7 @@ console.log(newCarCreated);
                     {/* car img-thumb  */}
                     <div className='new_car_img-thumb '>
                       <FormElement
-                        label={{ for: "img-thumb", text: "Choisir la photo principal"}} 
+                        label={{ for: "img-thumb", text: "Choisir la photo principale"}} 
                         input={{ type: "file", required: true, accept: "image/jpeg , image/png", name: "img-thumb", id: "img-thumb" , onChange:(e)=> setThumb(e.target.files[0])}}
                         required={true}
                       />
