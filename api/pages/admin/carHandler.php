@@ -25,12 +25,12 @@ switch ($requestMethod) {
                 $CarHandlerController = new CarHandlerController();
                 $CarHandlerController->addEquipment($carID,$equipID);
           
-        }else{
-            echo "YOU HAVEN'T AUTHORIZATION";
+        }else{ 
+            echo "YOU ARE NOT AUTHORIZATED TO STAY HERE!";
         }
 
-    break;
-
+        break;
+        
     case 'POST':
         if(isset($_FILES['thumbnail']) && isset($_FILES['gallery']) && isset($_POST['details'])) {
             $thumbnail = $_FILES['thumbnail'];

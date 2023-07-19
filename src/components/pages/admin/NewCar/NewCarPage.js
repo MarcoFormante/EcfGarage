@@ -8,6 +8,7 @@ import axios from '../../../../api/axios'
 import Resizer from "react-image-file-resizer"
 import toast, { Toaster } from 'react-hot-toast'
 import Loading from '../../../Loading/Loading'
+import { useLocation } from 'react-router-dom'
 
 
 const NewCarPage = () => {
@@ -17,6 +18,7 @@ const NewCarPage = () => {
   const [isLoading, setIsLoading] = useState(false)
   const notifySuccess = (text) => toast.success(text)
   const notifyError = (text) => toast.error(text)
+  const location = useLocation()
 
 
 
@@ -76,13 +78,13 @@ const NewCarPage = () => {
           if (response.data.status === 1) {
             notifySuccess("Nouvelle voiture ajouté avec succès");
             setNewCarCreated(true)
-            setFormValues({formValues :""})
+            setFormValues({detailValues: {}, equipmentValues: [], thumbnail: "", gallery: [] })
           } else {
             setNewCarCreated(false)
-            if (response.data.message.includes("vo_number")) {
+            if (response?.data?.message?.includes("vo_number")) {
               notifyError("Erreur: le 'numero VO' existe deja");
             } else {
-              notifyError(response.data.message)
+              notifyError(response?.data)
             }
           
           }
@@ -141,15 +143,16 @@ const NewCarPage = () => {
 
   useEffect(() => {
     if (newCarCreated) {
-      setFormValues({ detailValues: {}, equipmentValues: [""], thumbnail: "", gallery: [] })
+      setFormValues({ detailValues: {}, equipmentValues: [], thumbnail: "", gallery: [] })
       setThumb(null)
       window.scrollTo({
         top:0
       })
+      document.location.reload()
     }
   },[newCarCreated])
 
-console.log(newCarCreated);
+
 
   function prepareDetailsToFormData(formData) {
     for (const key in formValues.detailValues) {
@@ -204,7 +207,7 @@ console.log(newCarCreated);
                     {/* car img-thumb  */}
                     <div className='new_car_img-thumb '>
                       <FormElement
-                        label={{ for: "img-thumb", text: "Choisir la photo principale"}} 
+                        label={{ for: "img-thumb", text: "Choisir la photo principal"}} 
                         input={{ type: "file", required: true, accept: "image/jpeg , image/png", name: "img-thumb", id: "img-thumb" , onChange:(e)=> setThumb(e.target.files[0])}}
                         required={true}
                       />

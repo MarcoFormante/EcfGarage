@@ -1634,6 +1634,7 @@ input[name=img-thumb] {
 .new_car_equip_list .row {
   gap: 10px;
   margin-top: 20px;
+  margin-left: 90px;
 }
 .new_car_gallery {
   margin-top: 20px;

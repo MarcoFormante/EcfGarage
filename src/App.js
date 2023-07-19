@@ -33,7 +33,7 @@ function App() {
   
 
   useEffect(() => {
-    setHidden(["admin","area-reserve"].filter(path => location.pathname.includes(path)))
+    setHidden(["admin","espace-reserve"].filter(path => location.pathname.includes(path)))
   }, [location.pathname])
   
  

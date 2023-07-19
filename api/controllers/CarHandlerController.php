@@ -14,6 +14,8 @@ Class CarHandlerController{
         $carHandler->addEquipment($carID,$equipID);
     }
 
+   
+
     public function createNewCar($thumbnail,$gallery,$details,$equipments){
         $carHandler = new carHandler();
         $carHandler->createNewCar($thumbnail,$gallery,$details,$equipments);
