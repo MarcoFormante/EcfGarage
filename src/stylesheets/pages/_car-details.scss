@@ -117,7 +117,7 @@ transition: left 0.3s  ease-in-out;
        
 
         @media screen and (max-width:map-get($breakpoints,"medium")) {
-            height: 64vw;
+            height: 55vw;
             width: 88vw;
         }
     }

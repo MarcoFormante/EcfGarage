@@ -479,7 +479,7 @@ h2.page_title_home {
 }
 
 .time_table_single {
-  font-size: 16px;
+  font-size: 17px;
 }
 .time_table_single span {
   font-weight: bold;
@@ -1473,7 +1473,7 @@ input[type=checkbox] {
 }
 @media screen and (max-width: 768px) {
   .details_carousel_imgs img {
-    height: 64vw;
+    height: 55vw;
     width: 88vw;
   }
 }
