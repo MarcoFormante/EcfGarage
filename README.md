@@ -31,6 +31,11 @@ Create a file named ".htaccess" inside the "app" folder and open it. Set the env
 Setenv JWTkey "mySecretJWTKey" (choose one secret key)
 Setenv path "app"
 
+Inside api folder /models/connection.php:
+for connection the host is "localhost", dbname is "garage", username is "root", password is empty "";
+mysql:host=localhost;dbname=garage","root",""
+if use another name and password, change them.
+
 In your browser, go to localhost/phpmyadmin, then go to SQL and execute the following query:
 CREATE DATABASE garage 
 
@@ -44,4 +49,4 @@ Password: Testadmin23
 
 Feel free to create new cars or modify them. Please note that there are no images in the images/uploads folder related to the path images in the "car_images" table.
 
-If you need any assistance, please reach out to formante.marco@gmail.com.
+If you need any assistance, please reach out to formante.marco@gmail.com
