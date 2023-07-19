@@ -20,15 +20,15 @@ const Services = () => {
 
   return (
     <div className={'section_page section_page_services'}>
-        <h3 className={'section_title section_title_services'}>Decouvrez nos services</h3> 
+        <h3 className={'section_title section_title_services'}>Découvrez nos services</h3> 
         <figure className={'container--flex container_services_first_block'}>
-            <img src={"/images/services-image-garagevp.jpg"} alt="" width={530} height={447}/>
+            <img src={"/images/services-image-garagevp.jpg"} alt="Reparation Voitures au Garage Vincent Parrot" width={530} height={447}/>
         <p className={'txt-services txt_services--lineheight'}>
             Dans notre centre,
             nous nous engageons à fournir des services
-            de haute qualité pour assurer que votre véhicule
-            soit dans les meilleures conditions possibles.
-            Des controles de routine à la résolution de problèmes complexes,
+            de haute qualité pour vous assurer que votre véhicule
+            roule dans les meilleures conditions.
+            Du controle technique à la résolution de problèmes complexes,
             notre équipe possède l’expérience et les compétences nécessaires
             pour prendre soin de votre véhicule avec attention et précision.
           </p>
