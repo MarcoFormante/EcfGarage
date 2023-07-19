@@ -78,7 +78,8 @@ const NewCarPage = () => {
           if (response.data.status === 1) {
             notifySuccess("Nouvelle voiture ajouté avec succès");
             setNewCarCreated(true)
-            setFormValues({detailValues: {}, equipmentValues: [], thumbnail: "", gallery: [] })
+            setFormValues({ detailValues: {}, equipmentValues: [], thumbnail: "", gallery: [] })
+           
           } else {
             setNewCarCreated(false)
             if (response?.data?.message?.includes("vo_number")) {
@@ -148,7 +149,7 @@ const NewCarPage = () => {
       window.scrollTo({
         top:0
       })
-      document.location.reload()
+      
     }
   },[newCarCreated])
 
