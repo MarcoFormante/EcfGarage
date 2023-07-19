@@ -202,7 +202,7 @@ const Details = ({id,year,km,setDetailsInLoading}) => {
     const [activeDetail, setActiveDetail] = useState(true);
     const [details, setDetails] = useState([])
     const [equipements, setEquipements] = useState([])
-    const detailsTitles = ["Année", "Kilométrage", "Boîte de vitesses", "Puissance DIN","Nùmero VO", "Puissance fiscale","Couleur","Portières","Sièges","Carburant"]
+    const detailsTitles = ["Année", "Kilométrage", "Boîte de vitesse", "Puissance DIN","Numero VO", "Puissance fiscale","Couleur","Portières","Sièges","Carburant"]
   
     useEffect(() => {
 

@@ -40,13 +40,13 @@ const TimeComponent = (props) => {
         <>
             {parseInt(props.close) === 0
                 ?
-                <p className={"time_table_single time_table_single--close"}> <span>{props.day}:</span> <span style={{ marginLeft: "25%" }} className='text-center'>Fermé</span></p>
+                <p className={"time_table_single time_table_single--close"}> <span>{props.day}:</span> <span style={{ marginLeft: "18%" }} className='text-center'>Fermé</span></p>
                 :
                 props.day_end_am === "HC" || props.day_start_pm === "HC"
                     ?
                     <p className={"time_table_single"}><span>{props.day + ":"}</span> <time style={{ marginLeft: "18%" }}>{props.day_start_am}</time>-<time>{props.day_end_pm}</time> </p>
                     :
-                <p className={"time_table_single"}><span>{props.day}: </span> <time>{props.day_start_am}</time>-<time>{props.day_end_am}</time>/ <time>{props.day_start_pm}</time>-<time>{props.day_end_pm}</time></p>
+                <p className={"time_table_single"} ><span>{props.day}: </span> <time>{props.day_start_am}</time>-<time>{props.day_end_am}</time> / <time>{props.day_start_pm}</time>-<time>{props.day_end_pm}</time></p>
             }
         </>
     )

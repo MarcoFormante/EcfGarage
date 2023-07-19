@@ -14,7 +14,7 @@ const CarHandlerDetails = ({ carID, setCarID, setDataToUpdate, dataToUpdate,setN
     const [allEquipments, setAllEquipments] = useState([])
     const [newEquipment,setNewEquipment] = useState(null)
     
-    const detailsTitles = ["Boîte de vitesse", "Puissance DIN", "Puissance fiscale", "Couleur", "Portières", "Sièges", "Énergie"]
+    const detailsTitles = ["Boîte de vitesse", "Puissance DIN", "Puissance fiscale", "Couleur", "Portières", "Sièges", "Carburant"]
     const detailsColumn = ['gearbox', "din_power", "fiscal_power", "color", "doors", "seats", "energy"]
 
     const notifySuccess = (text) => toast.success(text);

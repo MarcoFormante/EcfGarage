@@ -455,7 +455,7 @@ h2.page_title_home {
   width: -moz-fit-content;
   width: fit-content;
   margin: auto;
-  padding: 10px;
+  padding: 38px;
 }
 .time_table_container tbody span {
   display: inline-block;
@@ -471,7 +471,7 @@ h2.page_title_home {
 .time_table_container tr {
   background-color: #b0b0b0;
   width: 80vw;
-  max-width: 330px;
+  max-width: 290px;
   min-width: 280px;
 }
 .time_table_container td {
@@ -479,15 +479,10 @@ h2.page_title_home {
 }
 
 .time_table_single {
-  font-size: 24px;
+  font-size: 16px;
 }
 .time_table_single span {
   font-weight: bold;
-}
-@media screen and (max-width: 370px) {
-  .time_table_single {
-    font-size: 16px;
-  }
 }
 .time_table_single--close {
   color: #D64E54;
