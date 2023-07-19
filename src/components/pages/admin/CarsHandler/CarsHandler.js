@@ -41,9 +41,18 @@ const CarsHandler = () => {
                 if (response.data.role === "admin" || response.data.role === "employee") {
                     const path = "pages/admin/carHandler.php" 
                     const formData = new FormData()
+                    if (filters !== "Tout" && modalFilterValue ===  "") {
+                        formData.append("filters", "Tout")
+                    } else if (filters !== "Tout" && modalFilterValue !== "" ) {
+                        formData.append("filters", filters)
+                    } else {
+                        formData.append("filters", filters)
+                    }
+                       
+                    
                     formData.append("currentPage", currentPage * 9)
                     formData.append("getAllCars", true)
-                    formData.append("filters", filters)
+                   
                     formData.append("filterValue",modalFilterValue)
                     axios.post(path, formData, {
                         headers: {
@@ -76,7 +85,8 @@ const CarsHandler = () => {
 
 
     useEffect(() => {
-        getCars() 
+       getCars()
+       
     }, [currentPage])
 
 
@@ -338,8 +348,8 @@ const CarsHandler = () => {
                                             onClick={
                                                 modalFilterValue !== ""
                                                     ?
-                                                (e) => {  
-                                                setmodalFilterValue(e.target.value)
+                                                () => {  
+                                               
                                                 setCurrentPage(0)
                                                     getCars()
                                                 }
