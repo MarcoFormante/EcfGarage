@@ -197,6 +197,8 @@ const CarsHandler = () => {
             getCars()
         }
     }, [filters,getCars])
+
+
     
 
   
@@ -333,7 +335,19 @@ const CarsHandler = () => {
                                     />
                                     <button type='button'
                                         className='cta cta--red cta-small'
-                                        onClick={modalFilterValue !== "" ? () => getCars() : null}>Filtrer</button>
+                                            onClick={
+                                                modalFilterValue !== ""
+                                                    ?
+                                                (e) => {  
+                                                setmodalFilterValue(e.target.value)
+                                                setCurrentPage(0)
+                                                    getCars()
+                                                }
+                                                    :
+                                                    null
+                                            }>
+                                            Filtrer
+                                    </button>
                                 </div>
                                 :
                                 null
