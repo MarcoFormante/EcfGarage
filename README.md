@@ -4,17 +4,12 @@ Garage Vincent Parrot ECF 2023.
 Hello everyone, for this project i used xaamp, react, and php
 so..
  
-install xampp (or wamp if you don't use xampp )
-
-go inside C:/ xampp / htdocs
-
-right click in empty zone inside this folder and click  "open in terminal" ;
-
-write : git clone https://github.com/MarcoFormante/EcfGarage.git
-
-rename "EcfGarage" folder to "app";
-
-command line in terminal : 
+Install XAMPP (or WAMP if you don't use XAMPP).
+Navigate to C:/xampp/htdocs in File Explorer.
+Right-click in an empty area inside this folder and click "Open in Terminal."
+In the terminal, enter the command: git clone https://github.com/MarcoFormante/EcfGarage.git
+Rename the "EcfGarage" folder to "app".
+Run the following command lines in the terminal:
 
 cd app
 
@@ -22,35 +17,31 @@ npm install;
 
 npm audit fix ;
 
-you need to install composer 
+You'll also need to install Composer. 
+After installing Composer, run this command in the terminal:
+composer require firebase/php-jwt
 
-when you got composer write this command line in the terminal "composer require firebase/php-jwt"
+Inside the "app" folder, create a new file named ".env.development" and open it.
+Write the following line inside it:
+REACT_APP_HTTP=http://localhost/app/api/
 
-inside "app" folder :
+Ensure that Apache is running in the XAMPP control panel.
 
--create a new file ".env.development" , open it and write REACT_APP_HTTP= http://localhost/app/api/ ;
-check in xampp control panel if apache is running ;
-
--create a file ".htaccess" , open it and  set the env for jwt code and path folder for vendor/autoload.php :
+Create a file named ".htaccess" inside the "app" folder and open it. Set the environment variables for the JWT code and the path folder for "vendor/autoload.php" as follows:
 Setenv JWTkey "mySecretJWTKey" (choose one secret key)
 Setenv path "app"
 
+In your browser, go to localhost/phpmyadmin, then go to SQL and execute the following query:
+CREATE DATABASE garage 
 
-In your browser search for localhost/phpmyadmin , go to SQL and write : CREATE DATABASE garage ,and execute it
+Next, click on "Import" and import the file "garage.sql" located inside the "app" folder.
+Finally, in the terminal, run the command: npm start
 
-then click to "import" and import the file "garage.sql" (it's inside the "app" folder);
+You can try to log in with these credentials in "Espace Reservé":
 
-and last command line in terminal (normally) : npm start
+Email: testadmin@gmail.com
+Password: Testadmin23
 
+Feel free to create new cars or modify them. Please note that there are no images in the images/uploads folder related to the path images in the "car_images" table.
 
-Try to logIn with this credentials in "Espace Reservé" :
-
-testadmin@gmail.com	
-Testadmin23
-
-try to create new cars or modify them.
-there are not images in images/uploads folder related with path images in car_images table
-
-need some help? 
-
-formante.marco@gmail.com
+If you need any assistance, please reach out to formante.marco@gmail.com.
