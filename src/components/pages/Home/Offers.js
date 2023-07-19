@@ -36,8 +36,10 @@ const Offers = ({cars,count}) => {
         setPathName(window.location.pathname)   
     }, [pathName])
 
+    
+
     useEffect(() => {
-        setCarouselX(carousel.current.scrollLeft);
+        setCarouselX(carousel?.current?.scrollLeft);
         setCarouselWidth(carousel?.current?.scrollWidth - carousel?.current?.offsetWidth);
         
         switch (arrowTarget) {
@@ -52,11 +54,12 @@ const Offers = ({cars,count}) => {
                 break;
         }
     }, [arrowTarget, carouselWidth, handleScrollCarousel])
+
     
     // every tick check scrollLeft of carousel ref
     useEffect(() => {
         
-        carousel.current.addEventListener("scroll", () => {
+        carousel?.current?.addEventListener("scroll", () => {
             setCarouselX(carousel?.current?.scrollLeft)
             setCarouselWidth(carousel?.current?.scrollWidth - carousel?.current?.offsetWidth);  
         })
@@ -66,7 +69,20 @@ const Offers = ({cars,count}) => {
             setCarouselWidth(carousel?.current?.scrollWidth - carousel?.current?.offsetWidth);  
         })
 
-        }, [carouselX,carouselWidth,carousel?.current?.offsetWidth])
+    }, [carouselX, carouselWidth, carousel?.current?.offsetWidth])
+    
+
+    useEffect(() => {
+        window.addEventListener("resize", () => {
+            setCarouselX(carousel?.current?.scrollLeft)
+            setCarouselWidth(carousel?.current?.scrollWidth - carousel?.current?.offsetWidth); 
+        })
+
+        return  window.removeEventListener("resize", () => {
+            setCarouselX(carousel?.current?.scrollLeft)
+            setCarouselWidth(carousel?.current?.scrollWidth - carousel?.current?.offsetWidth); 
+        })
+    },[])
 
     
     

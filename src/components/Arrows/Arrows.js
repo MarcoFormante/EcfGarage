@@ -13,7 +13,7 @@ const Arrows = ({ cardsTotalWidth ,carouselX, carouselWidth, onClick }) => {
         <div className={'arrow_left'} ></div>
     </button >
       <button className={'arrow  arrow_right_car_carousel'}
-        disabled={(carouselX && carouselX >= carouselWidth) || cardsTotalWidth < window.innerWidth}
+        disabled={(carouselX && carouselX >= carouselWidth  ) || cardsTotalWidth < window.innerWidth}
         style={((carouselX && carouselX >= carouselWidth - 1) || cardsTotalWidth < (window.innerWidth)) ? { opacity: "0.3" } : {}}
         onClick={() => onClick("right")}
       >

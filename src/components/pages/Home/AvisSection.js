@@ -46,58 +46,64 @@ const AvisSection = () => {
     
 
     
-    const handleScrollCarousel = (direction) => {
-       
-            const cardPadding = 20;
+     //carousel scroll event
+     const handleScrollCarousel = React.useCallback((direction) => {
+        const cardPadding = 20;
             carousel.current.scrollBy({
-                top: 0,
                 left: direction + window.innerWidth - cardPadding,
                 behavior: "smooth"
             })
-            
-            /** prevent multiple clicks*/
+        /** prevent multiple clicks*/
             setTimeout(() => {
                 setArrowTarget("")
-            }, 500)
-        
-    }
-    
+            }, 500) 
+    }, [])
   
     
-    useEffect(() => {
-        if (avis.length > 0) {
-            setCarouselX(carousel?.current?.scrollLeft);
-            setCarouselWidth(carousel?.current?.scrollWidth - carousel?.current?.offsetWidth);
-            switch (arrowTarget) {
-                case "left":
-                    handleScrollCarousel("-")
-                    break;
-                case "right":
-                    handleScrollCarousel("+")
-                    break;
+     useEffect(() => {
+        setCarouselX(carousel?.current?.scrollLeft);
+        setCarouselWidth(carousel?.current?.scrollWidth - carousel?.current?.offsetWidth);
         
-                default:
-                    break;
-            }
-    
+        switch (arrowTarget) {
+            case "left":
+                handleScrollCarousel("-")
+                break;
+            case "right":
+                handleScrollCarousel("+")
+                break;
+        
+            default:
+                break;
         }
-    }, [arrowTarget, carouselWidth])
+    }, [arrowTarget, carouselWidth, handleScrollCarousel])
 
   
-
     useEffect(() => {
-        if (avis.length > 0) {
-            carousel?.current?.addEventListener("scroll", () => {
-                setCarouselX(carousel?.current?.scrollLeft)
-                setCarouselWidth(carousel?.current?.scrollWidth - carousel?.current?.offsetWidth);
-            })
+        
+        carousel?.current?.addEventListener("scroll", () => {
+            setCarouselX(carousel?.current?.scrollLeft)
+            setCarouselWidth(carousel?.current?.scrollWidth - carousel?.current?.offsetWidth);  
+        })
 
-            return carousel?.current?.removeEventListener("scroll", () => {
-                setCarouselX(carousel?.current?.scrollLeft)
-                setCarouselWidth(carousel?.current?.scrollWidth - carousel?.current?.offsetWidth);
-            })
-        }
-        }, [carouselX,carouselWidth])
+        return carousel?.current?.removeEventListener("scroll", () => {
+            setCarouselX(carousel?.current?.scrollLeft)
+            setCarouselWidth(carousel?.current?.scrollWidth - carousel?.current?.offsetWidth);  
+        })
+
+    }, [carouselX, carouselWidth, carousel?.current?.offsetWidth])
+
+    
+    useEffect(() => {
+        window.addEventListener("resize", () => {
+            setCarouselX(carousel?.current?.scrollLeft)
+            setCarouselWidth(carousel?.current?.scrollWidth - carousel?.current?.offsetWidth); 
+        })
+
+        return  window.removeEventListener("resize", () => {
+            setCarouselX(carousel?.current?.scrollLeft)
+            setCarouselWidth(carousel?.current?.scrollWidth - carousel?.current?.offsetWidth); 
+        })
+    },[])
 
 
     
@@ -116,10 +122,10 @@ const AvisSection = () => {
                         </div>
                     </div>
     
-                    <Arrows cardsTotalWidth={avis.length * 250} carouselX={carouselX} carouselWidth={carouselWidth} onClick={(direction) => setArrowTarget(direction)} />
+                    <Arrows cardsTotalWidth={avis.length * 350} carouselX={carouselX} carouselWidth={carouselWidth} onClick={(direction) => setArrowTarget(direction)} />
                     
                     <div className={"avis_cards_container"}>
-                        <div className={"avis_cards_container_inner"} style={avis.length * 250 < window.innerWidth ? { justifyContent: "center" } : {}} ref={carousel}>
+                        <div className={"avis_cards_container_inner"} style={avis.length * 350 < window.innerWidth ? { justifyContent: "center" } : {}} ref={carousel}>
                             {avis && avis.map((avis, index) =>   <AvisCard key={"avis_" + index +"_card" } name={avis.name}  message={avis.message} review={avis.review} />)}
                         </div>
                     
