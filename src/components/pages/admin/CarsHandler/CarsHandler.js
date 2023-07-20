@@ -302,14 +302,17 @@ const CarsHandler = () => {
 
                                 :
                                 
-                            <div className='container--center--column gap-20'>
+                                <div className='container--center--column '>
+                                     <p className='text-bold' style={{fontSize:13,color:"#D64E54"}}> * Photos horizontales pour un meilleur rendu * </p>
                                 {typeof (dataToUpdate.value) !== "object"
-                                    ?
+                                        ?
+                                        
                                     <img src={"/images/uploads/" + dataToUpdate.value} alt="" width={200} height={130} style={{ objectFit: "contain", border: "1px solid black" }} />
                                     :
                                     <img src={URL.createObjectURL(dataToUpdate.value)} alt="" width={200} height={130} style={{ objectFit: "contain", border: "1px solid black" }} />
                                 }
-                                <label htmlFor="new_image_toModify" className='cta' style={{borderRadius:4}}>Choisi une image </label>
+                                    <label htmlFor="new_image_toModify" className='cta' style={{ borderRadius: 4 }}>Choisi une image </label>
+                                   
                             <input hidden type="file" name='file'id='new_image_toModify' accept='image/jpeg, image/png'
                                     onChange={(e) => setDataToUpdate({ ...dataToUpdate, value: e.target.files[0] })} />
                             </div>

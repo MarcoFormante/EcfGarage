@@ -206,8 +206,10 @@ const NewCarPage = () => {
             <form className='form' encType={'multipart/form-data'} onSubmit={(e)=>handleSubmit(e)} >
               
                     <div className='new_car inputs_container'>
-                    {/* car img-thumb  */}
-                    <div className='new_car_img-thumb '>
+          {/* car img-thumb  */}
+         
+          <div className='new_car_img-thumb '>
+         
                       <FormElement
                         label={{
                           for: "img-thumb",
@@ -222,11 +224,15 @@ const NewCarPage = () => {
                           onChange: (e) => setThumb(e.target.files[0])
                         }}
                         required={true}
-                      />
-                    </div>
-                    <div className='new_car_img-thumb_display'>
+            />
+            
+          </div>
+          
+          <div className='new_car_img-thumb_display'>
+         
+         
                       {thumb && <img style={{ objectFit: "contain", margin: "auto" }}
-                        src={URL.createObjectURL(thumb)} width={300} height={300} alt='' />}
+                      src={URL.createObjectURL(thumb)} width={300} height={300} alt='' />}
                     </div>
                   {/* car details */}
                     <div className='new_car_details container--pad-top inputs_container'>

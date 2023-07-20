@@ -164,6 +164,7 @@ const CarHandlerGallery = ({carID}) => {
               }} />}
           <hr />
           <h3 className={'section_title section_title_offres'}>{"Ajoutez des nouvelles photos"}</h3>
+          <p className='text-bold mar-auto ' style={{color:"#D64E54",fontSize:15}}> * Photos horizontales pour un meilleur rendu * </p>
           <div hidden={loading} className='new_car_gallery car_gallery'>
                 {
                     newGallery?.map((img, index) => <div key={"gallery_img_" + index + img.name}
