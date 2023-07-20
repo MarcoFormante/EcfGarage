@@ -325,7 +325,7 @@ const CarsHandler = () => {
                     null}
             {!carID &&
                 <>
-                    <PageTitle pageTitle={"Gestion vehicules"} />
+                    <PageTitle pageTitle={"Gestion véhicules"} />
                     <div className='container--pad-top'>
                         <div className='input_center_handler'>
                             <div className='container--center--column inputs_container_filters_inner '>
