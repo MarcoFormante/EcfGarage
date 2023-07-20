@@ -69,7 +69,8 @@ const NewCarPage = () => {
       if (resizedThumbnail && resizedGallery) {
       
       const formData = new FormData();
-      prepareFormData(formData, resizedGallery,resizedThumbnail)
+      prepareFormData(formData, resizedGallery, resizedThumbnail)
+        
       axios.post("pages/admin/carHandler.php", formData, {
             headers: {
               "Content-Type":"multipart/form-data"
@@ -208,19 +209,34 @@ const NewCarPage = () => {
                     {/* car img-thumb  */}
                     <div className='new_car_img-thumb '>
                       <FormElement
-                        label={{ for: "img-thumb", text: "Choisir la photo principal"}} 
-                        input={{ type: "file", required: true, accept: "image/jpeg , image/png", name: "img-thumb", id: "img-thumb" , onChange:(e)=> setThumb(e.target.files[0])}}
+                        label={{
+                          for: "img-thumb",
+                          text: "Choisir la photo principale"
+                        }} 
+                        input={{
+                          type: "file",
+                          required: true,
+                          accept: "image/jpeg , image/png",
+                          name: "img-thumb",
+                          id: "img-thumb",
+                          onChange: (e) => setThumb(e.target.files[0])
+                        }}
                         required={true}
                       />
                     </div>
                     <div className='new_car_img-thumb_display'>
-                    { thumb &&  <img style={{objectFit:"contain",margin:"auto"}} src={URL.createObjectURL(thumb)} width={300} height={300} alt='' />}
+                      {thumb && <img style={{ objectFit: "contain", margin: "auto" }}
+                        src={URL.createObjectURL(thumb)} width={300} height={300} alt='' />}
                     </div>
                   {/* car details */}
                     <div className='new_car_details container--pad-top inputs_container'>
                         <span className='new_car_details_title'>Détails du vehicule</span>
                         <div className='row_inputs_container inputs_container' >
-                          <DetailsInputs formIsValid={newCarCreated} formValues={formValues} setFormValues={(values)=>setFormValues({...formValues,...values})}/>
+                          <DetailsInputs
+                            formIsValid={newCarCreated}
+                            formValues={formValues}
+                            setFormValues={(values) => setFormValues({ ...formValues, ...values })}
+                          />
                         </div>
                     </div>
           

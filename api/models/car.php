@@ -10,7 +10,6 @@ Class Car {
 
     public function getAllCars($page,$filters){
         $filters = json_decode($filters,true);
-       
         $withOffer = "";
         if ($filters['offer'] === true) {
             $withOffer = 'AND offer > 0';
@@ -23,16 +22,18 @@ Class Car {
         WHERE (km > :minKm AND km < :maxKm) AND (year > :minYear AND year < :maxYear)
         AND (price - offer > :minPrice  AND price - offer < :maxPrice) $withOffer LIMIT :page,9";
       
-       
         if (!is_null($this->pdo)) {
+            //begin transaction
             $this->pdo->beginTransaction();
             $stmt = $this->pdo->prepare($queryCarCount);
             $stmt2 = $this->pdo->prepare($queryGetCars);
+
             foreach($filters as $f => $v){
                 if ($f !== "offer") {
                     $stmt2->bindValue(":$f",$v);
                 }
             }
+            
             $stmt2->bindValue(":page",intval($page),PDO::PARAM_INT);
          
             //execution of two stmts to get Count & filtered cars
@@ -53,7 +54,7 @@ Class Car {
             }
 
         }else{
-            throw new PDOException("Probleme pendant la recuperation des données");
+            echo json_encode(["status"=>0,"message"=>"Probleme pendant la recuperation des données"]);
         }
     }
 
@@ -76,8 +77,6 @@ Class Car {
               
                 echo json_encode(["status"=>0,"message"=>"Probleme pendant la recuperation des données"]);
             }
-
-           
         }
     }
 
@@ -98,7 +97,7 @@ Class Car {
                 return $equipments;
                 
             }else{
-                throw new PDOException("Probleme pendant la recuperation des données");
+              echo json_encode(["status"=>0,"message"=>"Probleme pendant la recuperation des données"]);
             }
         }
     }

@@ -111,8 +111,9 @@ const EquipmentsInputs = ({formValues,setFormValues,formIsValid}) => {
                         >
                         {equip.equipment}   
                         </label>
-                        </div>
-              </div>)}
+                    </div>
+              </div>
+          )}
         </div>
         <div className='add_new_equipement container--marg-top'>
                 <span style={{fontWeight:"600"}}>Ajouter un nouvel equipement</span> 

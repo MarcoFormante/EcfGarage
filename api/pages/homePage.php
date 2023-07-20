@@ -28,9 +28,7 @@ if (isset($_GET['services'])) {
     $serviceController = new ServiceController();
     $services = $serviceController->getAllServices(); 
     echo json_encode(["services"=>$services]);
-
 }
-
 
 if (isset($_GET['reviews'])) {
     $ReviewController = new ReviewController();

@@ -53,7 +53,7 @@ console.log(formIsValid);
   },[formIsValid])
 
   return (
-      <>
+      <> une bibliothèque JavaScript qui facilite les requêtes HTTP asynchrones vers le serveur. Cela m'a permis de communiquer efficacement avec le backend, récupérer les données et les mettre à jour en temps réel sur l'interface utilisateur.
         <FormElement label={{ for: "make", text: "Marque" }} input={{ type: "text", name: "make", id: "make",  onChange: (e) => setDetailValues({...detailValues,[e.target.name]:e.target.value})}} value={detailValues?.make} required={true} />
         <FormElement label={{ for: "model", text: "Modèl" }} input={{ type: "text",name:"model",id:"model",onChange:(e)=>setDetailValues({...detailValues,[e.target.name]:e.target.value})}} value={detailValues?.model} required={true} />
         <FormElement label={{ for: "price", text: "Prix" }} input={{ type: "number",name:"price",id:"price", onChange:(e)=>setDetailValues({...detailValues,[e.target.name]:e.target.value})}} value={detailValues.price} required={true} />

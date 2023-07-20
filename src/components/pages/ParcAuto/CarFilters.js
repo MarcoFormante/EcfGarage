@@ -2,7 +2,7 @@ import React, {useState, useEffect } from 'react'
 import MultiRangeSlider from './MultiRangeSlider'
 import axios from '../../../api/axios'
 
-const CarFilters = ({handleChangeFilters,closeButton,loadFilteredCars}) => {
+const CarFilters = ({handleChangeFilters,closeButton}) => {
   const [offer, setOffer] = useState(false)
   const [filters, setFilters] = useState({})
   const [baseFilters, setBaseFilters] = useState({})

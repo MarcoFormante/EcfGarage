@@ -101,7 +101,6 @@ const ProtectedRoute = ({ auth, redirectPath, checkTrigger }) => {
           dispatch(add(userRole))
         } else {
           dispatch(remove())
-         
         }
       })
     } else {
