@@ -5,6 +5,7 @@ Hello everyone, for this project i used xaamp, react, and php
 so..
  
 Install XAMPP (or WAMP if you don't use XAMPP).
+
 Navigate to C:/xampp/htdocs in File Explorer.
 Right-click in an empty area inside this folder and click "Open in Terminal."
 In the terminal, enter the command: git clone https://github.com/MarcoFormante/EcfGarage.git
